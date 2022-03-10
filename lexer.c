@@ -29,8 +29,22 @@ int main(int argc, char* argv[]) {
   fread(buffer, len+1, 1, compileDatei);
   printf("%s", buffer);
   fclose(compileDatei);
-    
+ 
+  //
+  // structure of a token 
+  //
+
+  typedef struct token {
+    char* type;
+    char* value;
+  } token ;
+  
+  // 
+  // creating the token-array
+  //
   
 
   return 0;
 }
+
+
