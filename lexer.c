@@ -9,6 +9,19 @@
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
+ 
+#define MAX_NUMBER_OF_TOKENS 100
+
+//
+// structure of a token 
+//
+
+typedef struct token_t {
+  char* type[6];
+  char* value[11];
+};
+
+
 
 int main(int argc, char* argv[]) {
   
@@ -20,6 +33,8 @@ int main(int argc, char* argv[]) {
   int len = 4096;
   char buffer[len];
 
+
+
   if (argc != 2) {
     printf("USAGE: %s <file>\n", argv[0]);
     return 0;
@@ -29,22 +44,9 @@ int main(int argc, char* argv[]) {
   fread(buffer, len+1, 1, compileDatei);
   printf("%s", buffer);
   fclose(compileDatei);
- 
-  //
-  // structure of a token 
-  //
 
-  typedef struct token {
-    char* type;
-    char* value;
-  } token ;
-  
-  // 
-  // creating the token-array
-  //
-  
 
-  return 0;
+  return 0; 
 }
 
 
